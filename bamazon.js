@@ -1,26 +1,50 @@
 /************ App Flows *****************************************************
-1. Run node bamazon.js 
+1. Run node bamazon.js from terminal
 2. Prompt User to Login or Create New Account
-3. Display all Inventory Products after User Login
-4. Prompt User to input Item Id and Order Quantity
-5. Show Order Summary: Item Id, Item Description, Order Quantity, Order $Total
-6. Prompt User for another order 
-    a. if User choose Yes then repear steps 1 - 5, 
-    b. Otherwise, show step 5
-7. Exit
-------------------- App Back End Flows ------------------
-1. User Login
- a. Verify user login against users table.
- b. If login successful, show all inventory items from products table
-2. 
+3. If Login is:
 
+    I. Customer
+        a. List all products for sales
+        b. Prompt to get customer purchase by item id and quantity
+        c. Display order item on screen to customer
+        d. Ask if customer wants to add more items to order. If customer response
+            - Y (Yes) : Repeat steps a -> d
+            - N (No) : Show customer's order summary
+
+    II. Manager
+        * Display Manager Menu Options 
+            - View Products for Sale by
+                . Input: Department
+                . Input: Item Id
+                . Input: Customer
+            - View Low Inventory
+                . Input: Number
+            - Add to Inventory
+                . Input: Item Id, Quantity 
+            - Add New Product 
+                . Input: Product Name, Price, Stock Quantity, Department
+    
+    III. Supervisor
+        * Display Supervisor Menu Options
+            - View Products for Sale by
+                . Input: Department
+                . Input: Item Id
+                . Input: Customer
+            - Create New Department
+                . Input: Department Name, Over Head Costs
+
+4. Files Used: 
+    - Main File: bamazon.js
+    - Sales Order: salesOrder.js
+    - User Management: users.js
+    - Order Details: orders.js 
+    - Inventory: products.js
+    - Print Item Ordered: ItemOrder.js
+    
 *****************************************************************************/
 
 //Require npm packages declarations
-var conn = require("./connection.js");
-var Users = require("./users.js");
+var conn = require("./connection");
+var User = require("./users");
 
-var Users = new Users();
-
-//Invoke user Login Function
-Users.LoginPrompt();
+User.loginPrompt();

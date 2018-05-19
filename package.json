@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rnguyen05/NodeJs-MySql#readme",
   "dependencies": {
     "columnify": "^1.5.4",
+    "console.table": "^0.10.0",
     "inquirer": "^5.2.0",
     "mysql": "^2.15.0"
   }

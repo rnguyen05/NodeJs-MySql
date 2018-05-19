@@ -1,31 +1,28 @@
-var conn = require("./connection.js");
-var Products = require("./products.js");
 var inquirer = require("inquirer");
-var Products = new Products();
+var conn = require("./connection");
+var product = require("./products");
 
-var Users = function () {
-
-    this.LoginPrompt = function () {
+var User = {
+    //Prompt User Login or Create New Account Function
+    loginPrompt: function () {
         inquirer.prompt ([
-            {
-                type: "list",
-                message: "Please Choose Below Options?",
-                choices: ["Login", "Create New User"],
-                name: "loginChoice"
-            }]).then (function (choice) {
-                if (choice.loginChoice === "Login") {
-                    var users = new Users();
-                    users.userLogin();
-                }
-                else if (choice.loginChoice === "Create New User") {
-                    var users = new Users();
-                    users.createNewUser();
-                    return;
-                }
-            });
-    };
+        {
+            type: "list",
+            message: "Please Choose Below Options?",
+            choices: ["Login", "Create New Account"],
+            name: "loginChoice"
+        }]).then (function (choice) {
+            if (choice.loginChoice === "Login") {
+                User.userLogin();
+            }
+            else if (choice.loginChoice === "Create New Account") {
+                User.createNewUser();
+            }
+        });
+    },//End of LoginPrompt
 
-    this.createNewUser = function () {
+    //Create New User Function
+    createNewUser: function () {
         inquirer.prompt ([
             {
                 type: "input",
@@ -48,14 +45,15 @@ var Users = function () {
                 name: "lastName"
             }
         ]).then (function (user) {
-            conn.query("INSERT INTO users(user_name, password, first_name, last_name, role) VALUES (?,?,?,?,?)"
+            conn.query(`INSERT INTO users(user_name, password, first_name, last_name, role) 
+                        VALUES (?,?,?,?,?)`
                         ,[user.userName, user.userPassword, user.firstName, user.lastName, "Customer"]);
-            var users = new Users();
-            users.userLogin();   
+            User.userLogin();   
         });
-    }//End of createUsers
+    },//End of createUsers
 
-    this.userLogin = function () {
+    //User Login Function
+    userLogin: function () {
         inquirer.prompt ([
             {
                 type: "input",
@@ -68,38 +66,68 @@ var Users = function () {
                 name: "userPassword"
             }
         ]).then (function (roleRes) {  
-            conn.query("SELECT * FROM users WHERE user_name = ? AND password = ?",[roleRes.userName,roleRes.userPassword], function (err, results, fields) {
+            conn.query(`SELECT * 
+                        FROM users 
+                        WHERE user_name = ? 
+                        AND password = ?`,[roleRes.userName,roleRes.userPassword], function (err, results) {
                 if (err) throw err;
     
                 if (results.length > 0) {
                     results.forEach(function (el) {
-                        userId = el.user_id;
-                        console.log("\nCustomer Login");
-                        console.log("-----------------------------------------------------");
-                        console.log("Welcome " + el.first_name + " " + el.last_name + "!\n");
                         if (el.role === "Customer") {
-                            Products.showProducts();
+                            console.log("\nCustomer Menu");
+                            console.log("-----------------------------------------------------");
+                            console.log("Welcome " + el.first_name + " " + el.last_name + "!\n");
+                            product.showProducts(el.user_id);  
                         }
                         else if (el.role === "Supervisor") {
-                            console.log("\nSupervisor Login");
+                            console.log("\nSupervisor Menu");
                             console.log("-----------------------------------------------------");
                             console.log("Welcome " + el.first_name + " " + el.last_name + "!\n");
+                            product.supervisorMenu();
                         }
                         else if (el.role === "Manager") {
-                            console.log("\nManager Login");
+                            console.log("\nManager Menu");
                             console.log("-----------------------------------------------------");
                             console.log("Welcome " + el.first_name + " " + el.last_name + "!\n");
+                            User.managerMenu(el.user_id);
                         }
                     });
                 }
                 else {
                     console.log("Login failed! Please try again.");
-                    var users = new Users();
-                    users.userLogin();
+                    User.userLogin();
                 }
             });
         });
-    }//End of userLogin
-};//End of Users Constructor
+    },//End of userLogin
 
-module.exports = Users;
+    //Manager Menu Function
+    managerMenu: function (userId) {
+        inquirer.prompt ([
+            {
+                type: "list",
+                message: "Please Choose Below Options?",
+                choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"],
+                name: "mgrChoice"
+            }]).then (function (choice) {
+                if (choice.mgrChoice === "View Products for Sale") {
+                    product.showProducts(userId);
+                }
+                else if (choice.mgrChoice === "View Low Inventory") {
+                    product.viewLowInvItems(userId);
+                }
+                else if (choice.mgrChoice === "Add to Inventory") {
+                    product.addInventory(userId);
+                }
+                else if (choice.mgrChoice === "Add New Product") {
+                    product.addNewProduct(userId);
+                }
+            });
+    }//End of managerMenu 
+}//End of User Object
+
+
+module.exports = User
+
+

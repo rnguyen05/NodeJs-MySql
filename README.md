@@ -15,27 +15,27 @@
     ##### II. Manager
     Display Manager Menu Options
     1. View Products for Sale by
-        - Input: Department
-        - Input: Item Id
-        - Input: Customer
+        - Department
+        - Item Id
+        - Customer
     2. View Low Inventory
-        - Input: a Number
+        - a Number
     3. Add to Inventory
-        - Input: Item Id, Quantity
+        - Item Id, Quantity
     4. Add New Product
-        - Input: Product Name, Price, Stock Quantity, Department
+        - Product Name, Price, Stock Quantity, Department
+    
+    ##### III. Supervisor
+    Display Supervisor Menu Options
+    1. View Products for Sale by
+        - Department
+        - Item Id
+        - Customer
+    2. Create New Department
+        - Department Name, Over Head Costs
+    
 
-
-III. Supervisor
-    * Display Supervisor Menu Options
-        - View Products for Sale by
-            . Input: Department
-            . Input: Item Id
-            . Input: Customer
-        - Create New Department
-            . Input: Department Name, Over Head Costs
-
-4. Files Used:
+4. App Files:
     - Main File: bamazon.js
     - Sales Order: salesOrder.js
     - User Management: users.js

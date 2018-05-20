@@ -4,26 +4,12 @@
 1. Run node bamazon.js from terminal.
 2. Prompt User to Login or Create New Account.
 3. If Logged in User is:
-
-
-
-
-
-<dl>
-  <dt>Customer</dt>
-  <dd>a. List all products for sales</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-
-I. Customer --
-a/ List all products for sales
-    b. Prompt to get customer purchase by item id and quantity
-    c. Display order item on screen to customer
-    d. Ask if customer wants to add more items to order. If customer response
-        - Y (Yes) : Repeat steps a -> d
+    ##### I. Customer
+    1. List all products for sales
+    2. Prompt to get customer purchase by item id and quantity
+    3. Display order item on screen to customer
+    4. Ask if customer wants to add more items to order. If customer response
+        - Y (Yes) : Repeat steps i -> iv
         - N (No) : Show customer's order summary
 
 II. Manager

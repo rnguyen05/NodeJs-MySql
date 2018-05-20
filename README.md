@@ -3,7 +3,7 @@
 #### App Flows:
 1. Run node bamazon.js from terminal.
 2. Prompt User to Login or Create New Account.
-3. If Logged in User is:
+3. If Logged-in User is:
     ##### I. Customer
     1. List all products for sales
     2. Prompt to get customer purchase by item id and quantity

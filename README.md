@@ -1,6 +1,6 @@
 # NodeJs-MySql
-Amazon-like storefront
-App Flows:
+### Amazon-like storefront
+#### App Flows:
 1. Run node bamazon.js from terminal.
 2. Prompt User to Login or Create New Account.
 3. If Logged in User is:

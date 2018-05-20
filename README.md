@@ -39,6 +39,7 @@
     - Order Details: orders.js
     - Inventory: products.js
     - Print Item Ordered: ItemOrder.js
+    - Database Connection: connection.js
     
 
 

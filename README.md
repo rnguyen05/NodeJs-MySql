@@ -14,10 +14,7 @@
         
     ##### II. Manager
     Display Manager Menu Options
-    1. View Products for Sale by
-        - Department
-        - Item Id
-        - Customer
+    1. View Products for Sale
     2. View Low Inventory
         - a Number
     3. Add to Inventory

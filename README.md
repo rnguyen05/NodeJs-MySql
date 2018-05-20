@@ -12,25 +12,19 @@
         - Y (Yes) : Repeat steps i -> iv
         - N (No) : Show customer's order summary
         
-    ##### I. Manager
-    1. List all products for sales
-    2. Prompt to get customer purchase by item id and quantity
-    3. Display order item on screen to customer
-    4. Ask if customer wants to add more items to order. If customer responds
-        - Y (Yes) : Repeat steps i -> iv
-        - N (No) : Show customer's order summary
-II. Manager
-    * Display Manager Menu Options
-        - View Products for Sale by
-            . Input: Department
-            . Input: Item Id
-            . Input: Customer
-        - View Low Inventory
-            . Input: Number
-        - Add to Inventory
-            . Input: Item Id, Quantity
-        - Add New Product
-            . Input: Product Name, Price, Stock Quantity, Department
+    ##### II. Manager
+    Display Manager Menu Options
+    1. View Products for Sale by
+        - Input: Department
+        - Input: Item Id
+        - Input: Customer
+    2. View Low Inventory
+        - Input: a Number
+    3. Add to Inventory
+        - Input: Item Id, Quantity
+    4. Add New Product
+        - Input: Product Name, Price, Stock Quantity, Department
+
 
 III. Supervisor
     * Display Supervisor Menu Options

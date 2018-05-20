@@ -1,14 +1,30 @@
 # NodeJs-MySql
 Amazon-like storefront
 
-App Flows:
+<dl>
+  <dt>App Flows:</dt>
+  <dd>1. Run node bamazon.js from terminal</dd>
+  <dd>2. Prompt User to Login or Create New Account</dd>
+  <dd>3. If Logged in User is:</dd>
 
-1. Run node bamazon.js from terminal
-2. Prompt User to Login or Create New Account
-3. If Login is:
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
 
-I. Customer
-    a. List all products for sales
+
+
+
+<dl>
+  <dt>Customer</dt>
+  <dd>a. List all products for sales</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+
+I. Customer --
+a/ List all products for sales
     b. Prompt to get customer purchase by item id and quantity
     c. Display order item on screen to customer
     d. Ask if customer wants to add more items to order. If customer response

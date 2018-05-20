@@ -8,10 +8,17 @@
     1. List all products for sales
     2. Prompt to get customer purchase by item id and quantity
     3. Display order item on screen to customer
-    4. Ask if customer wants to add more items to order. If customer response
+    4. Ask if customer wants to add more items to order. If customer responds
         - Y (Yes) : Repeat steps i -> iv
         - N (No) : Show customer's order summary
-
+        
+    ##### I. Manager
+    1. List all products for sales
+    2. Prompt to get customer purchase by item id and quantity
+    3. Display order item on screen to customer
+    4. Ask if customer wants to add more items to order. If customer responds
+        - Y (Yes) : Repeat steps i -> iv
+        - N (No) : Show customer's order summary
 II. Manager
     * Display Manager Menu Options
         - View Products for Sale by

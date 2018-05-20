@@ -1,15 +1,10 @@
 # NodeJs-MySql
 Amazon-like storefront
+App Flows:
+1. Run node bamazon.js from terminal.
+2. Prompt User to Login or Create New Account.
+3. If Logged in User is:
 
-<dl>
-  <dt>App Flows:</dt>
-  <dd>1. Run node bamazon.js from terminal</dd>
-  <dd>2. Prompt User to Login or Create New Account</dd>
-  <dd>3. If Logged in User is:</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
 
 
 
